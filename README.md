@@ -56,7 +56,6 @@ $carrinho->adicionarItem(1, 2);
 Saída esperada:
 
     Sucesso: Produto adicionado ao carrinho
-    Total: R$ 119,80
 
 ------------------------------------------------------------------------
 
