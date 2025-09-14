@@ -21,8 +21,7 @@ class Carrinho {
         $this->itens = $itens;
     }
     
-    public function adicionarItem(int $idProduto, int $quantidade): ?Produto 
-    {
+    public function adicionarItem(int $idProduto, int $quantidade): ?Produto {
         // 1. Busca produto por ID
         $produto = $this->findById($idProduto);
         
@@ -55,8 +54,7 @@ class Carrinho {
         return $produto;
     }
     
-    public function findById(int $idProduto): ?Produto 
-    {
+    public function findById(int $idProduto): ?Produto {
         foreach ($this->produtos as $produto) {
             if ($produto->getId() == $idProduto) {
                 return $produto;
@@ -67,8 +65,7 @@ class Carrinho {
 
     
     
-    public function exibirCarrinho(): void 
-    {
+    public function exibirCarrinho(): void {
         echo "+ Itens do Carrinho";
         
         if (empty($this->itens)) {
@@ -90,16 +87,14 @@ class Carrinho {
     }
     
     
-    public function exibirProdutos(): void 
-    {
+    public function exibirProdutos(): void {
         echo "+ Produtos Disponíveis";
         foreach ($this->produtos as $produto) {
             echo "<p>ID: {$produto->getId()} | {$produto->getNome()} | R$ " . number_format($produto->getPreco(), 2, ',', '.') . " | Estoque: {$produto->getEstoque()}</p>";
         }
     }
 
-    public function executarCasosTeste(): void 
-    {
+    public function executarCasosTeste(): void {
         echo "+ Casos de Teste";
         
         // Caso 1: Adicionar produto válido
@@ -133,16 +128,14 @@ class Carrinho {
         }
     }
 
-    public function exibirProdutosAposOperacoes(): void 
-    {
+    public function exibirProdutosAposOperacoes(): void {
         echo "+ Produtos Após Operações";
         foreach ($this->produtos as $produto) {
             echo "<p>ID: {$produto->getId()} | {$produto->getNome()} | R$ " . number_format($produto->getPreco(), 2, ',', '.') . " | Estoque: {$produto->getEstoque()}</p>";
         }
     }
 
-    public function removerProdutoCompletoComExibicao(int $idProduto): void 
-    {
+    public function removerProdutoCompletoComExibicao(int $idProduto): void {
         echo "+ Remover produto do carrinho (ID={$idProduto})";
         $resultado = $this->removerItem($idProduto);
         if ($resultado) {
@@ -156,8 +149,7 @@ class Carrinho {
     private $cupomAplicado = null;
     private $percentualDesconto = 0.0;
 
-    public function aplicarCupom(string $cupom): void 
-    {
+    public function aplicarCupom(string $cupom): void {
         $cupons = [
             'DESCONTO10' => 10.0,
             'DESCONTO20' => 20.0,
@@ -173,8 +165,7 @@ class Carrinho {
         }
     }
 
-    public function calcularTotal(): float 
-    {
+    public function calcularTotal(): float {
         $total = 0;
         foreach ($this->itens as $item) {
             $total += $item->getPreco();
@@ -188,8 +179,7 @@ class Carrinho {
         return $total;
     }
 
-    public function findItemByIdCarrinho(int $idProduto): ?Produto 
-    {
+    public function findItemByIdCarrinho(int $idProduto): ?Produto {
         foreach ($this->itens as $item) {
             if ($item->getId() == $idProduto) {
                 return $item;
@@ -198,8 +188,7 @@ class Carrinho {
         return null;
     }
     
-    public function removerItem(int $idProduto): ?Produto 
-    {
+    public function removerItem(int $idProduto): ?Produto {
         $item = $this->findItemByIdCarrinho($idProduto);
         if (!$item) {
             echo "Item não encontrado<br>";
