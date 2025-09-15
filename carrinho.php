@@ -119,7 +119,6 @@ class Carrinho {
     public function aplicarCupom(string $codigo): bool {
         $cupons = [
             'DESCONTO10' => 0.10,
-            'DESCONTO20' => 0.20
         ];
 
         if (isset($cupons[$codigo])) {
@@ -132,3 +131,4 @@ class Carrinho {
         return false;
     }
 }
+
