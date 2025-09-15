@@ -55,7 +55,7 @@ $carrinho->adicionarItem(1, 2);
 
 Saída esperada:
 
-    Sucesso: Produto adicionado ao carrinho
+   Sucesso: Produto adicionado ao carrinho
 
 ------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ $carrinho->adicionarItem(3, 10);
 
 Saída esperada:
 
-    Erro: Estoque insuficiente
+   Erro: Estoque insuficiente
 
 ------------------------------------------------------------------------
 
@@ -75,7 +75,7 @@ $carrinho->removerItem(2);
 
 Saída esperada:
 
-    Sucesso: Produto removido do carrinho, estoqu restaurado
+   Sucesso: Produto removido do carrinho, estoque restaurado
 
 ------------------------------------------------------------------------
 
@@ -85,4 +85,4 @@ $carrinho->aplicarCupom('DESCONTO10');
 
 Saída esperada:
 
-    Cupom aplicado: DESCONTO10 (10% de desconto)
+   Cupom aplicado: DESCONTO10 (10% de desconto)
