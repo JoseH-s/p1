@@ -94,40 +94,6 @@ class Carrinho {
         }
     }
 
-    public function executarCasosTeste(): void {
-        echo "+ Casos de Teste";
-        
-        // Caso 1: Adicionar produto válido
-        echo "+ Caso 1: Adicionar produto válido (ID=1, Qtd=2)";
-        $resultado = $this->adicionarItem(1, 2);
-        if ($resultado) {
-            echo "+ Sucesso: Produto adicionado ao carrinho<br>";
-            $this->exibirCarrinho();
-        } else {
-            echo "- Erro: Não foi possível adicionar o produto<br>";
-        }
-        
-        // Caso 2: Tentar adicionar além do estoque
-        echo "+ Caso 2: Tentar adicionar além do estoque (ID=3, Qtd=10)";
-        $resultado = $this->adicionarItem(3, 10);
-        if ($resultado) {
-            echo "+ Sucesso: Produto adicionado ao carrinho<br>";
-            $this->exibirCarrinho();
-        } else {
-            echo "- Erro: Não foi possível adicionar o produto<br>";
-        }
-        
-        // Caso 3: Adicionar mais um produto
-        echo "+ Caso 3: Adicionar outro produto (ID=2, Qtd=1)";
-        $resultado = $this->adicionarItem(2, 1);
-        if ($resultado) {
-            echo "+ Sucesso: Produto adicionado ao carrinho<br>";
-            $this->exibirCarrinho();
-        } else {
-            echo "- Erro: Não foi possível adicionar o produto<br>";
-        }
-    }
-
     public function exibirProdutosAposOperacoes(): void {
         echo "+ Produtos Após Operações";
         foreach ($this->produtos as $produto) {
@@ -206,8 +172,7 @@ class Carrinho {
         
         echo "+ Item removido: {$idProduto}";
         return $item;
-    }
-    
-    
+    } 
 
 }
+
