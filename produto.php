@@ -61,9 +61,4 @@ class Produto
         $this->estoque += $quantidade;
         return true;
     }
-
-    public function temEstoque(int $quantidade): bool
-    {
-        return $this->estoque >= $quantidade;
-    }
 }
