@@ -12,11 +12,11 @@ Instruções de Execução
 
 3.  Verifique se a pasta do projeto está em:
 
-        C:\xampp\htdocs\
+   C:\xampp\htdocs\
 
 4.  Abra no navegador:
 
-        http://localhost/p1/
+   http://localhost/p1/
 
 ------------------------------------------------------------------------
 
